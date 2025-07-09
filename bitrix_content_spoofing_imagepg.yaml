@@ -2,7 +2,7 @@ id: "bitrix_content_spoofing_imagepg"
 
 info:
   name: Bitrix24 <=20.0.0 - imagepg.php content spoofing 
-  author: JhonnyBonny
+  author: crlf,metascan
   severity: medium
   description: The Web Application Firewall in Bitrix24 up to and including 20.0.0 allows Content Spoofing via the img parameter to the bitrix/tools/imagepg.php URI.
   reference:
@@ -12,12 +12,13 @@ info:
     cvss-score: 4.3
     cve-id: CVE-2023-002
     cwe-id: CWE-345
-  tags: cve,cve2023,xss,bitrix,spoofing
+  tags: bitrix,cve
+  author: community
 
 http:
   - method: GET
     path:
-      - '{{BaseURL}}/bitrix/tools/imagepg.php?img=//metascan.ru/assets/images/logo.svg'
+      - '{{BaseURL}}/bitrix/tools/imagepg.php?img=//github.com/fluidicon.png'
 
     stop-at-first-match: true
     matchers-condition: and
@@ -31,7 +32,7 @@ http:
       - type: word
         part: body
         words:
-          - 'img src="//metascan.ru/assets/images/logo.svg"'
+          - 'img src="//github.com/fluidicon.png"'
 
       - type: status
         status:

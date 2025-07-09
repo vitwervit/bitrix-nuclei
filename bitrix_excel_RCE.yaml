@@ -2,7 +2,7 @@ id: bitrix-esol-excel-rce
 
 info:
   name: Bitrix Esol Excel RCE search
-  author: @shit_sec
+  author: community
   severity: critical
   description: Поиск потенциальных точек RCE в модулях импорта/экспорта Bitrix
   tags: bitrix,exposure,cron

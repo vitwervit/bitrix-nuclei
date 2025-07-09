@@ -2,7 +2,7 @@ id: "bitrix_restore_rce"
 
 info:
   name: Bitrix check restore rce 
-  author: JhonnyBonny
+  author: community
   severity: high
   description: Check if the restore rce exists on the website.
   reference:

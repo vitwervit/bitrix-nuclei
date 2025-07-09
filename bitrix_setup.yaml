@@ -2,7 +2,7 @@ id: bitrix-bitrixsetup-panel
 
 info:
   name: Bitrix Bitrixsetup Panel
-  author: JhonnyBonny
+  author: community
   severity: high
   description: Bitrix Bitrixsetup Panel.
   classification:

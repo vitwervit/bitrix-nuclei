@@ -1,15 +1,15 @@
-id: bitrix24-installer
+id: bitrix24_installer
 
 info:
   name: Bitrix24 Installation Exposure
-  author: JhonnyBonny
+  author: community
   severity: high
   description: Bitrix24 is susceptible to the Installation page exposure due to misconfiguration.
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-2115208104
-  tags: misconfig,bitrix24,install,exposure
+  tags: misconfig,bitrix,install,exposure
 
 http:
   - method: GET

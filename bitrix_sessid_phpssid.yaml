@@ -2,10 +2,11 @@ id: bitrix_sessid_and_phpssid
 
 info:
   name: "Bitrix Session and PHPSESSID"
-  author: JhonnyBonny
+  author: community
   severity: info
   description: |
     This template extracts information from the given URL related to bitrix_sessid and PHPSESSID cookies.
+  tags: bitrix,cms
 
 requests:
 - method: GET

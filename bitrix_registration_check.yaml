@@ -2,8 +2,8 @@ id: bitrix-registration-check
 
 info:
   name: Bitrix Registration Endpoint Check
-  author: vitwervit
-  severity: info
+  author: community
+  severity: medium
   description: Проверяет наличие демо-регистрации
   tags: bitrix,registration,exposure
 
@@ -27,14 +27,13 @@ requests:
       - "{{BaseURL}}/bitrix/wizards/bitrix/demo/indexes/ru/cancel/?register=yes"
       - "{{BaseURL}}/bitrix/wizards/bitrix/demo/indexes/en/cancel/?register=yes"
 
+    matchers-condition: and
     matchers:
       - type: word
+        part: body
         words:
           - "Регистрация"
-          - "Зарегистрироваться"
-          - "Create an account"
-          - "Register"
-          - "Sign up"
-        condition: or
-        part: body
 
+      - type: status
+        status:
+          - 200
