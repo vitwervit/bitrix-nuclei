@@ -1,0 +1,40 @@
+id: bitrix-registration-check
+
+info:
+  name: Bitrix Registration Endpoint Check
+  author: vitwervit
+  severity: info
+  description: Проверяет наличие демо-регистрации
+  tags: bitrix,registration,exposure
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/auth/?register=yes"
+      - "{{BaseURL}}/crm/?register=yes"
+      - "{{BaseURL}}/auth/oauth2/?register=yes"
+      - "{{BaseURL}}/bitrix/wizards/bitrix/demo/public_files/ru/auth/index.php?register=yes"
+      - "{{BaseURL}}/bitrix/wizards/bitrix/demo/public_files/en/auth/index.php?register=yes"
+      - "{{BaseURL}}/bitrix/wizards/bitrix/demo/modules/examples/public/language/ru/examples/custom-registration/index.php"
+      - "{{BaseURL}}/bitrix/wizards/bitrix/demo/modules/examples/public/language/en/examples/custom-registration/index.php"
+      - "{{BaseURL}}/bitrix/wizards/bitrix/demo/modules/examples/public/language/ru/examples/my-components/news_list.php?register=yes"
+      - "{{BaseURL}}/bitrix/wizards/bitrix/demo/modules/examples/public/language/en/examples/my-components/news_list.php?register=yes"
+      - "{{BaseURL}}/bitrix/wizards/bitrix/demo/modules/subscribe/public/personal/subscribe/subscr_edit.php?register=yes"
+      - "{{BaseURL}}/bitrix/modules/bitrix.siteinfoportal/install/wizards/bitrix/infoportal/site/public/ru/personal/profile/index.php?register=yes"
+      - "{{BaseURL}}/bitrix/modules/bitrix.siteinfoportal/install/wizards/bitrix/infoportal/site/public/en/personal/profile/index.php?register=yes"
+      - "{{BaseURL}}/bitrix/modules/bitrix.siteinfoportal/install/wizards/bitrix/infoportal/site/public/ru/board/my/index.php?register=yes"
+      - "{{BaseURL}}/bitrix/modules/bitrix.siteinfoportal/install/wizards/bitrix/infoportal/site/public/en/board/my/index.php?register=yes"
+      - "{{BaseURL}}/bitrix/wizards/bitrix/demo/indexes/ru/cancel/?register=yes"
+      - "{{BaseURL}}/bitrix/wizards/bitrix/demo/indexes/en/cancel/?register=yes"
+
+    matchers:
+      - type: word
+        words:
+          - "Регистрация"
+          - "Зарегистрироваться"
+          - "Create an account"
+          - "Register"
+          - "Sign up"
+        condition: or
+        part: body
+
